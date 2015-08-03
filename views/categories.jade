@@ -1,0 +1,26 @@
+doctype
+html
+  head
+    title #{title} - Categories
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      h1 Categories
+    .container
+      .main-content
+        a(href="javascript:void(0)") New Category
+        br
+        br
+        .categories_div
+          table(border=1)
+            tr
+              th Category Name
+              th Category Type
+              th Actions
+            each category in categories
+              tr
+                td #{category.name}
+                td #{category.category_type}
+                td 
+                  a(href="javascript:void(0)") Edit  |  
+                  a(href="javascript:void(0)") Delete

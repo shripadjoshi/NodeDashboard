@@ -10,14 +10,14 @@ function redirectToError(error, res) {
 
 /* GET categories listing. */
 router.get('/', function(req, res, next) {
-    dbUtils.getAllCategories(function(categories) {
-        res.json({
-            categories: categories
-        });        
+    categories = dbUtils.getAllCategories(function(categories) {
+        res.render('categories',
+            { title : 'Categories',
+            categories: categories }
+        );      
     }, function(error) {
         redirectToError(error, res);
-    });
-    //res.send('respond with a resource');
+    });    
 });
 
 
